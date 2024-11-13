@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Playlist - M3u</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="images/logo.webp" alt="M3u Logo" class="logo">
+        </a>
+        <h1>Welcome to M3U - IPTV Playlist Editor</h1>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="dropdownMenu" class="menu-overlay">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="features.html" onclick="closeMenu()">Features</a>
+            <a href="contact.html" onclick="closeMenu()">Contact</a>
+            <a href="upload.html" onclick="closeMenu()">Get Started</a>
+        </nav>
+    </header>
+    
+    <div id="overlay" class="overlay"></div>
+
+    <main>
+        <section id="upload">
+            <h2>Select Your M3U Playlist</h2>
+            <form id="uploadForm">
+                <label for="fileUpload">Upload M3U File:</label>
+                <input type="file" id="fileUpload" accept=".m3u">
+                <br>
+                <label for="urlUpload">Or Enter Playlist URL:</label>
+                <input type="url" id="urlUpload" placeholder="Enter URL here">
+                <br>
+                <button type="button" onclick="loadPlaylist()">Load Playlist</button>
+            </form>
+        </section>
+        
+        <section id="playlistContainer">
+            <!-- Parsed playlist content will appear here -->
+        </section>
+        
+        <button id="exportButton" onclick="exportPlaylist()">Export Playlist</button>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 M3U - All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
