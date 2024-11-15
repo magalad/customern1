@@ -1,307 +1,240 @@
-/* Reset some basic styling */
+/* Reset basic styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-}
 
-/* Header styling */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
-}
-
-header nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-/* Main content styling */
-main {
-    padding: 20px;
-}
-
-#intro {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#features ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#features li {
-    background: #e4e4e4;
-    margin: 10px 0;
-    padding: 10px;
-}
-
-/* Footer styling */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-/* Styling for forms and upload section */
-#upload form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    background-color: #e4e4e4;
-    border-radius: 8px;
-}
-
-#upload label {
-    margin-top: 10px;
-}
-
-#upload input[type="file"], 
-#upload input[type="url"] {
-    padding: 8px;
-    margin: 8px 0;
-}
-
-#upload button {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-#upload button:hover {
-    background-color: #555;
-}
-
-/* Styling for features list */
-#features-list ul {
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    list-style-type: disc;
-}
-
-#features-list li {
-    margin-bottom: 10px;
-}
-
-/* Contact form styling */
-#contact {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #e4e4e4;
-    border-radius: 8px;
-}
-
-#contact form {
-    display: flex;
-    flex-direction: column;
-}
-
-#contact label {
-    margin-top: 10px;
-}
-
-#contact input[type="text"],
-#contact input[type="email"],
-#contact textarea {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-#contact button {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-#contact button:hover {
-    background-color: #555;
-}
-
-.logo {
-    width: 50px; /* Adjust as needed */
-    height: auto;
-    margin-right: 10px; /* Space between logo and heading */
-    vertical-align: middle; /* Aligns logo with the header text */
-}
-
+/* Header */
 header {
     display: flex;
-    align-items: center;
-    padding: 1em;
-    background-color: #333;
-    color: #fff;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 1.5em;
-}
-
-/* Header Styling */
-header {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 1em;
-    background-color: #333;
-    color: #fff;
-    position: relative;
+    align-items: center;
+    padding: 1em 5%;
+    background: transparent;
 }
 
 .logo {
-    width: 50px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 
-                0px 0px 10px rgba(255, 255, 255, 0.5); /* Subtle glow effect */
-}
-
-
-header h1 {
-    flex-grow: 1;
-    text-align: center;
     font-size: 1.5em;
-    margin: 0;
-}
-
-.menu-icon {
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* Dropdown Menu Styling */
-nav {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #333;
-    padding: 1em;
-    border-radius: 4px;
+    font-weight: bold;
 }
 
 nav a {
-    color: #fff;
+    margin-left: 1em;
+    color: white;
     text-decoration: none;
-    margin: 5px 0;
-    display: block;
+    font-weight: 500;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
-/* Full-screen overlay for the menu */
-.menu-overlay {
-    display: block; /* Keep display as block for smooth transition */
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 20%; /* 1/5th of the screen width */
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay background */
-    color: #fff;
-    z-index: 1000;
-    padding-top: 2em;
-    text-align: center;
-    transform: translateX(100%); /* Start off-screen */
-    transition: transform 0.4s ease; /* Smooth slide-in effect */
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 10%;
+    text-align: left;
 }
 
-.menu-overlay.active {
-    transform: translateX(0); /* Slide into view */
+.hero-content {
+    max-width: 50%;
 }
 
+.hero-content h1 {
+    font-size: 2.5em;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
 
-.menu-overlay a {
-    display: block;
-    margin: 1em 0;
-    color: #fff;
-    text-decoration: none;
+.hero-content .highlight {
+    color: #ff6f61; /* Red color for emphasis */
+}
+
+.hero-content p {
     font-size: 1.2em;
+    margin-bottom: 1.5em;
 }
 
-
-.menu-overlay.active {
-    display: block;
-    transform: translateX(0); /* Slide-in effect */
+.cta-button {
+    background-color: white;
+    color: #1a73e8;
+    font-size: 1em;
+    padding: 0.7em 1.5em;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.menu-overlay a {
-    display: block;
-    margin: 1em 0;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5em;
+.cta-button:hover {
+    background-color: #e0e0e0;
 }
 
-.menu-overlay a:hover {
-    text-decoration: underline;
+/* Video Placeholder */
+.hero-video {
+    max-width: 40%;
 }
 
-/* Dark overlay styling */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
+.video-placeholder {
+    background-color: #255bbf;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    opacity: 0; /* Start invisible */
-    transition: opacity 0.4s ease; /* Smooth fade-in effect */
-    z-index: 900; /* Place behind the sidebar but above content */
-    display: none; /* Hidden by default */
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.overlay.active {
-    display: block;
-    opacity: 1; /* Fully visible when active */
+.play-button {
+    position: absolute;
+    font-size: 2em;
+    color: white;
+    opacity: 0.8;
 }
 
-#playlistContainer {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    max-width: 600px;
+/* Header overlay background */
+.header-overlay {
+    background-color: rgba(255, 255, 255, 0.1); /* White with 10% opacity */
+    border-radius: 15px; /* Slightly more rounded */
+    padding: 15px 30px; /* Increase padding for a larger overlay */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: fit-content;
+    margin: 10px 20px 0 auto;
+}
+
+
+.header-overlay nav a {
+    margin-left: 1.5em;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em; /* Increase font size */
+}
+
+/* Left overlay for M3U Player text */
+.header-overlay-left {
+    background-color: rgba(255, 255, 255, 0.1); /* White with 10% opacity */
+    border-radius: 15px;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    max-width: fit-content;
+    margin: 10px auto 0 20px; /* Align to the top-left corner */
+}
+
+.logo-text {
+    color: white;
+    font-size: 1.2em; /* Slightly larger for emphasis */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Features Page Styling */
+body {
+    min-height: 200vh;
+    font-family: Arial, sans-serif;
+    background-color: #1e50bb; /* Light background color */
+    color: #333;
+}
+
+/* Page Title */
+header h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin: 40px 0;
+}
+
+.features-page body {
+    background-color: #f5f8ff; /* Light background color for Features page */
+    color: #333;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; /* Space between each box */
+    padding: 20px;
+    max-width: 1200px; /* Optional: limit max width */
+    margin: auto; /* Center the grid on the page */
+}
+
+
+
+.feature-item {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #e5eaff;
+    color: #7f8cff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
     margin: auto;
+    font-size: 1.5em;
+    margin-bottom: 15px;
 }
 
-.channel-item {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+.feature-item h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-.channel-item:last-child {
-    border-bottom: none;
+.feature-item .highlight {
+    color: #ff6f61; /* Highlight color for emphasis */
 }
+
+.feature-item p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Icon Placeholder Styles (replace with actual icons if you have them) */
+.icon-download::before { content: "↓"; }
+.icon-image::before { content: "🖼"; }
+.icon-group::before { content: "👥"; }
+.icon-convert::before { content: "🔄"; }
+.icon-code::before { content: "</>"; }
+.icon-shield::before { content: "🛡"; }
+.icon-price::before { content: "💰"; }
+.icon-update::before { content: "🔄"; }
+
+/* Home link in the header */
+.home-link {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    margin-left: 5%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.home-link:hover {
+    color: #7f8cff; /* Hover color to match the design */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+

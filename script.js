@@ -139,6 +139,7 @@ function displayPlaylist(playlist) {
 function updateChannelName(index, newName) {
     if (window.currentPlaylist && window.currentPlaylist[index]) {
         window.currentPlaylist[index].name = newName;
+        savePlaylistToLocalStorage(); // Save updated playlist
     }
 }
 
@@ -147,8 +148,10 @@ function removeChannel(index) {
     if (window.currentPlaylist) {
         window.currentPlaylist.splice(index, 1); // Remove the channel from the playlist
         displayPlaylist(window.currentPlaylist); // Re-render the updated playlist
+        savePlaylistToLocalStorage(); // Save updated playlist
     }
 }
+
 
 function exportPlaylist() {
     if (!window.currentPlaylist || window.currentPlaylist.length === 0) {
@@ -179,6 +182,20 @@ function exportPlaylist() {
     document.body.removeChild(a);
 }
 
-{
-    
+// Save playlist to local storage
+function savePlaylistToLocalStorage() {
+    localStorage.setItem("savedPlaylist", JSON.stringify(window.currentPlaylist));
 }
+
+// Load playlist from local storage
+function loadPlaylistFromLocalStorage() {
+    const savedPlaylist = localStorage.getItem("savedPlaylist");
+    if (savedPlaylist) {
+        window.currentPlaylist = JSON.parse(savedPlaylist);
+        savePlaylistToLocalStorage();
+        displayPlaylist(window.currentPlaylist);
+    }
+}
+
+// Load the playlist from local storage when the page loads
+window.onload = loadPlaylistFromLocalStorage;
